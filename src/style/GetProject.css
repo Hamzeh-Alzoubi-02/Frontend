@@ -1,0 +1,407 @@
+.projects-container-Get-Project {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px; /* إضافة بعض التدوير للحواف لجعل التصميم أكثر نعومة */
+}
+
+.projects-list-Get-Project {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* تكبير حجم البطاقات */
+    gap: 20px; /* تقليل التباعد بين المنشورات لجعلها أكثر توازنًا */
+}
+
+.project-card-Get-Project {
+    background: #1a1a1a;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 10px; /* إضافة تدوير الحواف */
+}
+
+.project-card-Get-Project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 243, 255, 0.2);
+}
+
+.project-header-Get-Project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.project-title-Get-Project {
+    font-size: 1.5rem;
+    color: #00f3ff;
+    margin: 0;
+    flex: 1;
+}
+
+.project-status-Get-Project {
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.project-images-Get-Project {
+    display: flex;
+    justify-content: center; /* محاذاة الصور في المنتصف */
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-image-Get-Project {
+    width: 250px; /* تكبير الصورة */
+    height: 250px;
+    object-fit: cover; /* الحفاظ على جودة الصورة */
+    border-radius: 5px; /* إزالة التدوير وجعلها مربعة */
+    transition: transform 0.3s ease;
+}
+
+.project-image-Get-Project:hover {
+    transform: scale(1.1);
+}
+
+.project-details-Get-Project {
+    margin-bottom: 1rem;
+}
+
+#link-icon-Get-Project{
+    margin-right: 5px;
+}
+
+.project-description-Get-Project {
+    color: #b2bec3;
+    margin: 0.5rem 0;
+}
+
+.project-link-Get-Project {
+    color: #00f3ff;
+    text-decoration: none;
+}
+
+.project-link-Get-Project:hover {
+    text-decoration: underline;
+}
+
+.project-info-Get-Project {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.project-views-Get-Project,
+.project-likes-Get-Project {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-views-count-Get-Project,
+.project-likes-count-Get-Project {
+    color: #ffffff;
+}
+
+.fas fa-eye {
+    color: #b2bec3;
+}
+
+#star {
+    color: #f1c40f;
+}
+
+.project-tags-Get-Project {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.project-tag-Get-Project {
+    background: rgba(0, 243, 255, 0.1);
+    color: #00f3ff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.like-section-Get-Project {
+    margin-bottom: 1rem;
+}
+
+.like-button-Get-Project {
+    background: none;
+    border: 1px solid #00f3ff;
+    color: #00f3ff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.like-button-Get-Project:hover {
+    background: rgba(0, 243, 255, 0.1);
+}
+
+#like-button-Get-Project-icon {
+    margin-right: 0.5rem;
+}
+
+.likes-list-Get-Project {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.like-item-Get-Project {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.like-item-Get-Project:hover {
+    transform: translateY(-3px);
+}
+
+.like-image-Get-Project {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #00f3ff;
+}
+
+.comments-section-Get-Project {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+.comments-list-Get-Project {
+    display: flex;
+    flex-direction: column; /* عرض التعليقات تحت بعضها */
+    gap: 1rem; /* تقليل المسافة بين التعليقات ولكن بدون تكدس */
+    margin-bottom: 2rem;
+    max-height: 400px; /* تحديد ارتفاع مناسب */
+    overflow-y: auto; /* السماح بالتمرير عند زيادة عدد التعليقات */
+    padding-right: 0.5rem;
+}
+
+.comment-input-Get-Project {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 15px;
+    padding: 0.8rem;
+    color: #ffffff;
+}
+
+.comment-input-Get-Project:focus {
+    outline: none;
+    border-color: #00f3ff;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+.comment-button-Get-Project {
+    background: linear-gradient(45deg, #00f3ff, #2ecc71);
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.comment-button-Get-Project:hover {
+    transform: translateY(-2px);
+}
+
+.comment-item-Get-Project {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%; /* جعل التعليق يأخذ العرض بالكامل */
+}
+
+.comment-user-Get-Project {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.comment-avatar-Get-Project {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #00f3ff;
+}
+
+.comment-username-Get-Project {
+    color: #00f3ff;
+    text-decoration: none;
+}
+
+.comment-username-Get-Project:hover {
+    text-decoration: underline;
+}
+
+.comment-text-Get-Project {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5; /* زيادة المسافة بين الأسطر */
+}
+/* إضافة قواعد Media Queries لتحسين الاستجابة */
+
+/* للأجهزة الصغيرة (الهاتف المحمول) */
+@media (max-width: 768px) {
+    .projects-container-Get-Project {
+        padding: 1rem;
+    }
+
+    .projects-list-Get-Project {
+        grid-template-columns: 1fr; /* عرض بطاقة واحدة في كل صف */
+        gap: 15px; /* تقليل التباعد بين العناصر */
+    }
+
+    .project-card-Get-Project {
+        padding: 1.5rem;
+    }
+
+    .project-title-Get-Project {
+        font-size: 1.2rem;
+    }
+
+    .project-images-Get-Project {
+        flex-direction: column; /* ترتيب الصور عموديًا */
+        align-items: center;
+    }
+
+    .project-image-Get-Project {
+        width: 200px; /* تقليص حجم الصور */
+        height: 200px;
+    }
+
+    .project-description-Get-Project {
+        font-size: 0.9rem; /* تقليل حجم النص */
+    }
+
+    .project-link-Get-Project {
+        font-size: 0.9rem;
+    }
+
+    .project-info-Get-Project {
+        flex-direction: column; /* ترتيب المعلومات عموديًا */
+        align-items: flex-start;
+    }
+
+    .project-tags-Get-Project {
+        flex-direction: column; /* ترتيب التاغات عموديًا */
+    }
+
+    .like-button-Get-Project {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .comments-list-Get-Project {
+        max-height: 300px; /* تقليص ارتفاع التعليقات */
+    }
+
+    .comment-input-Get-Project {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .comment-button-Get-Project {
+        width: 100%;
+        padding: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .comment-item-Get-Project {
+        flex-direction: column; /* ترتيب التعليقات عموديًا */
+        width: 100%;
+    }
+
+    .comment-user-Get-Project {
+        flex-direction: column;
+    }
+
+    .comment-avatar-Get-Project {
+        width: 30px;
+        height: 30px;
+    }
+
+    .comment-text-Get-Project {
+        font-size: 0.9rem;
+    }
+}
+
+/* للأجهزة المتوسطة (الأجهزة اللوحية) */
+@media (max-width: 1024px) {
+    .projects-list-Get-Project {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* عرض 2 أو 3 بطاقات حسب الحجم */
+    }
+
+    .project-card-Get-Project {
+        padding: 1.5rem;
+    }
+
+    .project-title-Get-Project {
+        font-size: 1.3rem;
+    }
+
+    .project-image-Get-Project {
+        width: 230px;
+        height: 230px;
+    }
+
+    .project-description-Get-Project {
+        font-size: 1rem;
+    }
+
+    .project-tags-Get-Project {
+        flex-wrap: wrap;
+    }
+}
+
+/* للأجهزة الكبيرة (شاشات الكمبيوتر) */
+@media (min-width: 1025px) {
+    .projects-list-Get-Project {
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* وضع البطاقات في صفوف متعددة */
+    }
+
+    .project-card-Get-Project {
+        padding: 2rem;
+    }
+
+    .project-title-Get-Project {
+        font-size: 1.5rem;
+    }
+
+    .project-image-Get-Project {
+        width: 250px;
+        height: 250px;
+    }
+
+    .project-description-Get-Project {
+        font-size: 1rem;
+    }
+
+    .project-tags-Get-Project {
+        flex-wrap: wrap;
+    }
+
+    .like-button-Get-Project {
+        font-size: 1rem;
+    }
+}

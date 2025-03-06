@@ -1,0 +1,270 @@
+.EditPost-container {
+     min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+}
+
+.EditPost-container-inner {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.EditPost-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #00f3ff, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.EditPost-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.EditPost-post {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.EditPost-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 243, 255, 0.2);
+}
+
+.EditPost-textarea-container {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid #00f3ff;
+    border-radius: 10px;
+    color: #fff;
+    min-height: 120px;
+    resize: vertical;
+}
+
+.EditPost-textarea-length {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #b2bec3;
+    font-size: 0.9rem;
+}
+
+.EditPost-image-label {
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.EditPost-image-label:hover {
+    background: rgba(0, 243, 255, 0.1);
+}
+
+.EditPost-image-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: #00f3ff;
+}
+
+.EditPost-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.EditPost-button-save {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(45deg, #00f3ff, #2ecc71);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.EditPost-button-save:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.EditPost-button-cancel {
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #e74c3c;
+    border-radius: 8px;
+    color: #e74c3c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.EditPost-button-cancel:hover {
+    background: rgba(231, 76, 60, 0.1);
+}
+
+.EditPost-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.EditPost-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.EditPost-status-text {
+    color: #b2bec3;
+    font-size: 0.9rem;
+}
+
+.EditPost-image-container {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.EditPost-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.EditPost-image-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.EditPost-image-icon {
+    margin-right: 0.3rem;
+}
+
+.EditPost-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #b2bec3;
+    font-size: 0.9rem;
+}
+
+.EditPost-info-icon {
+    margin-right: 0.5rem;
+}
+
+.EditPost-button-edit {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    color: #00f3ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.EditPost-button-edit:hover {
+    background: rgba(0, 243, 255, 0.1);
+}
+
+.EditPost-button-delete {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    color: #e74c3c;
+    cursor: pointer;
+    margin-top: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.EditPost-button-delete:hover {
+    background: rgba(231, 76, 60, 0.1);
+}
+ 
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .EditPost-container {
+        padding: 15px;
+    }
+
+    .EditPost-container-inner {
+        padding: 1.5rem;
+    }
+
+    .EditPost-title {
+        font-size: 1.8rem;
+    }
+
+    .EditPost-posts {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .EditPost-container {
+        padding: 10px;
+    }
+
+    .EditPost-container-inner {
+        padding: 1rem;
+    }
+
+    .EditPost-title {
+        font-size: 1.6rem;
+    }
+
+    .EditPost-posts {
+        grid-template-columns: 1fr;
+    }
+
+    .EditPost-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .EditPost-button-save, .EditPost-button-cancel {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .EditPost-container {
+        height: auto;
+        padding: 5px;
+    }
+
+    .EditPost-title {
+        font-size: 1.4rem;
+    }
+
+    .EditPost-textarea-container {
+        min-height: 100px;
+    }
+
+    .EditPost-button-save, .EditPost-button-cancel {
+        padding: 0.6rem;
+    }
+}

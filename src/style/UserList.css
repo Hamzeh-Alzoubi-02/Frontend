@@ -1,0 +1,215 @@
+/* حاوية المستخدمين */
+.users-containers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #181818;
+}
+
+/* كرت المستخدم */
+.user-cards {
+  background-color: #222;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #1a1a1a;
+}
+
+.user-cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 243, 255, 0.2);
+}
+
+/* صورة الغلاف */
+.cover-images {
+  height: 180px;
+  position: relative;
+  background: linear-gradient(45deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.cover-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: url(#colorize);
+}
+
+/* صورة البروفايل */
+.profile-image-container {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #00f3ff;
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+/* معلومات المستخدم */
+.user-infos-user-list {
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.user-name-user-list {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.user-name-user-list:hover {
+  color: #00f3ff;
+}
+
+/* الخط الفاصل */
+.underline-user-list {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: #00f3ff;
+  transition: all 0.3s ease;
+}
+
+/* الشارات */
+.badges-user-list {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.badge-user-list-level {
+  background: rgba(0, 243, 255, 0.1);
+  color: #00f3ff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* التعليم والمهارات */
+.education-skills-user-list {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.education-user-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.education-user-list-text {
+  margin: 0;
+  color: #b2bec3;
+  font-size: 0.9rem;
+}
+
+.skills-user-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skills-user-list-text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-users-list {
+  background: rgba(241, 196, 15, 0.1);
+  color: #f1c40f;
+  padding: 0.2rem 0.6rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+/* تأثير Hover */
+.hover-effect-user-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(0, 243, 255, 0.1) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* تخصيص لعرض الأجهزة الصغيرة */
+@media (max-width: 768px) {
+  .user-cards {
+    max-width: 100%;
+  }
+
+  .user-infos-user-list {
+    padding: 1rem;
+  }
+
+  .profile-image-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .user-name-user-list {
+    font-size: 1.25rem;
+  }
+
+  .skills-user-list-text {
+    flex-direction: column;
+  }
+
+  .cover-images {
+    height: 150px;
+  }
+}
+
+/* تخصيص لعرض الأجهزة الصغيرة جدًا */
+@media (max-width: 480px) {
+  .user-name-user-list {
+    font-size: 1rem;
+  }
+
+  .badge-user-list-level {
+    font-size: 0.7rem;
+  }
+
+  .user-cards {
+    padding: 1rem;
+  }
+
+  .profile-image-container {
+    top: 70px;
+    width: 70px;
+    height: 70px;
+  }
+}

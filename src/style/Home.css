@@ -1,0 +1,99 @@
+/* الحاوية الرئيسية */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* الحاوية الرئيسية (الأقسام) */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 75px;
+  flex-wrap: wrap; /* يسمح بلف العناصر عندما تكون المساحة ضيقة */
+  /* إضافة مسافة بين الأقسام */
+}
+
+/* القسم الأيسر */
+.left-section {
+  background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  flex: 1; /* يسمح بالتمدد ليشغل المساحة المتاحة */
+  min-width: 250px; /* ضمان أن العرض لا يصبح صغيرًا جدًا */
+}
+
+/* القسم الرئيسي (الوسط) */
+.main-section {
+  flex: 2; /* يحدد أنه يشغل ضعف المساحة مقارنة بالقسم الأيسر والأيمن */
+  background-color: #1a1a1a;
+  padding: 20px;
+  margin: 0;
+  min-width: 400px; /* ضمان الحد الأدنى للعرض */
+}
+
+/* القسم الأيمن (NavFriend كـ Sidebar) */
+.right-section {
+  background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+  flex: 1; /* نفس الفكرة كما في القسم الأيسر */
+  min-width: 250px; /* ضمان أن العرض لا يصبح صغيرًا جدًا */
+}
+
+/* لجعل Sidebar يغطي ارتفاع الصفحة */
+.sidebar {
+  margin: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  height: 100vh; /* ليغطي المساحة الرأسية بالكامل */
+  padding: 10px;
+}
+
+/* للأجهزة الصغيرة (الهاتف المحمول) */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column; /* جعل الأقسام تحت بعضها البعض */
+    margin-top: 20px;
+  }
+
+  .left-section, .main-section {
+    width: 100%; /* جعل جميع الأقسام تحتل عرض الشاشة بالكامل */
+    padding: 10px; /* تقليل الحشو */
+  }
+
+  .sidebar {
+    margin: 1rem 0;
+    height: auto; /* إزالة الارتفاع الثابت */
+  }
+
+  /* إخفاء الجزء الأيمن على الشاشات الصغيرة */
+  .right-section {
+    display: none; /* إخفاء القسم الأيمن */
+  }
+
+  .main-section {
+    margin-top: 15px;
+  }
+}
+
+/* للأجهزة المتوسطة (الأجهزة اللوحية) */
+@media (max-width: 1024px) {
+  .main-content {
+    flex-direction: column; /* جعل الأقسام تحت بعضها البعض */
+    margin-top: 20px;
+  }
+
+  .left-section, .main-section, .right-section {
+    width: 100%; /* جعل جميع الأقسام تحتل عرض الشاشة بالكامل */
+  }
+
+  .sidebar {
+    margin: 1rem;
+    height: auto;
+  }
+
+  .main-section {
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,124 @@
+/* HomeCreatePost.css */
+
+/* Container for the post creation form */
+.home-create-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    padding: 1.5rem;
+    background: #1a1a1a;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Header Section */
+  .home-create-post-header {
+    
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .home-create-post-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00f3ff;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+  }
+  
+  .home-create-post-header h1 {
+    font-size: 1.4rem;
+    background: linear-gradient(45deg, #00f3ff, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Post Creation Form */
+  .create-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .create-post-form textarea {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1rem;
+    resize: none;
+    transition: all 0.3s ease;
+  }
+  
+  .create-post-form .file-upload {
+    border: 2px dashed rgba(0, 243, 255, 0.3);
+    border-radius: 10px;
+    padding: 0.5rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    width: 50%;
+    margin: 0 auto;
+    height: fit-content;
+  }
+  
+  .create-post-form .file-upload label {
+    cursor: pointer;
+  }
+  
+  .create-post-form .file-upload img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .create-post-form .file-upload button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  /* Submit Button */
+  .create-post-form button[type="submit"] {
+    background: linear-gradient(45deg, #00f3ff, #2ecc71);
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  /* Posts Section */
+  .create-posts-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    background: #2b2b2b;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  

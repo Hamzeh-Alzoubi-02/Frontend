@@ -1,0 +1,216 @@
+/* Notifications.css */
+
+.notifications-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(circle at 50% 0%, #1a1a1a, #0a0a0a);
+    padding: 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+    padding: 50px;
+    font-family: 'Tajawal', sans-serif;
+    color: #fff;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+.title {
+    font-size: 2rem;
+    margin: 0;
+    WebkitBackgroundClip: text;
+}
+
+.bell-icon {
+    font-size: 2rem;
+    color: #00f3ff;
+    filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.5));
+}
+
+.notifications-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.notification-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.status-indicator {
+    position: relative;
+    width: 20px;
+}
+
+.unread-dot {
+    width: 10px;
+    height: 10px;
+    background: #00f3ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-button {
+    background: none;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.action-button:hover {
+    background: rgba(124, 58, 237, 0.1);
+    border-color: #7c3aed;
+    color: #7c3aed;
+}
+
+.message {
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
+
+.time-stamp {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #b2bec3;
+    font-size: 0.9rem;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #7c3aed;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    color: #64748b;
+}
+
+/* Add animation for spinner */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 40px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .bell-icon {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .bell-icon {
+        font-size: 1.6rem;
+    }
+
+    .notifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notification-card {
+        padding: 1.2rem;
+    }
+
+    .actions {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .bell-icon {
+        font-size: 1.4rem;
+    }
+
+    .notification-card {
+        padding: 1rem;
+    }
+
+    .message {
+        font-size: 1rem;
+    }
+
+    .time-stamp {
+        font-size: 0.8rem;
+    }
+}

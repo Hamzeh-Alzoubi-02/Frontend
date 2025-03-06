@@ -1,0 +1,449 @@
+/* استيراد خطوط وأيقونات إن لم تكن فعلت سابقًا */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+.view-post-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+} 
+
+/* ======= الحاوية الرئيسية بتأثير زجاجي ======= */
+.container {
+   position: relative;
+  margin: 100px auto 40px; /* مسافة علوية بعد الـ NavBar */
+  padding: 20px;
+  border-radius: 15px;
+
+  background: rgb(33, 33, 33);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* ======= عنوان الصفحة ======= */
+.heading {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+  position: relative;
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* ======= حاوية المنشورات ======= */
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ======= تصميم المنشور الواحد (Card) ======= */
+.post {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* تأثير عند التحويم */
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* تاريخ النشر */
+.posted-date {
+  font-size: 0.85rem;
+  color: #ddd;
+  margin-bottom: 6px;
+}
+
+/* صورة المستخدم */
+.post-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border: 2px solid #eee;
+  float: left;
+}
+
+/* اسم المستخدم */
+.post-username {
+  font-weight: 600;
+  color: #e25252ad;
+  font-size: 1rem;
+  float: left;
+  margin-bottom: 10px;
+  margin-top: calc(40px / 2 - 20px / 2);
+  cursor: pointer;
+}
+
+/* صورة المنشور */
+.post-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px 0;
+  display: block;
+}
+
+/* نص المنشور */
+.post-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  clear: both;
+  border-bottom: #000 solid 0.5px;
+}
+
+/* ======= قسم الأكشن (إعجاب وتعليقات) ======= */
+.post-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* زر الإعجاب */
+.like-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ff4b5c;
+  transition: transform 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.like-button:hover {
+  transform: scale(1.1);
+  color: #ff7183;
+}
+
+/* زر إظهار التعليقات */
+.show-comments-btn {
+  background-color: #444444;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.show-comments-btn:hover {
+  background-color: #312d2d;
+  transform: scale(1.05);
+}
+
+/* أسماء من قاموا بالإعجاب */
+.likes-list {
+  display: flex;
+   
+  font-size: 0.85rem;
+  color: #ffffff;
+  margin: 5px 0 10px;
+  text-decoration: none;
+}
+
+/* ======= حركة نبض (HeartBeat) عند الضغط على زر الإعجاب ======= */
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.3);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.3);
+  }
+  60% {
+    transform: scale(1);
+  }
+}
+.like-button.animated {
+  animation: heartBeat 0.6s ease-in-out forwards;
+}
+
+/* ======= لا توجد منشورات ======= */
+.no-posts {
+  text-align: center;
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 40px 0;
+  opacity: 0.8;
+}
+
+/* ======= تصميم التعليقات والردود في النافذة المنبثقة ======= */
+.comment {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.comment:hover {
+  transform: translateX(3px);
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.comment img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #eee;
+}
+
+.comment p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.comment p a {
+  font-weight: 600;
+  color: #000000;
+  text-decoration: none;
+  margin-right: 5px;
+}
+.comment p a:hover {
+  text-decoration: underline;
+}
+
+/* قسم الرد */
+.reply-section {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.reply-section input[type="text"] {
+  flex: 1;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  font-size: 0.85rem;
+  transition: border-color 0.2s;
+}
+.reply-section input[type="text"]:focus {
+  border-color: #0bf;
+}
+
+.reply-section button {
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* قسم إدخال تعليق جديد */
+.comments-section {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.comments-section input[type="text"] {
+  flex: 1;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+.comments-section input[type="text"]:focus {
+  border-color: #ffd700;
+}
+
+.comments-section button {
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.comments-section button:hover {
+  transform: scale(1.005);
+}
+
+/* ======= Media Queries for Responsiveness ======= */
+
+/* للأجهزة اللوحية (من 768px إلى 1024px) */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 15px;
+    margin: 60px auto 40px;
+  }
+
+  .post {
+    padding: 15px;
+  }
+
+  .post-profile-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .post-username {
+    font-size: 0.9rem;
+  }
+
+  .post-text {
+    font-size: 0.9rem;
+  }
+
+  .like-button {
+    font-size: 1rem;
+  }
+
+  .show-comments-btn {
+    font-size: 0.8rem;
+  }
+
+  .comments-section input[type="text"] {
+    font-size: 0.85rem;
+  }
+
+  .comments-section button {
+    font-size: 0.85rem;
+  }
+}
+
+/* للأجهزة الصغيرة (من 480px إلى 768px) */
+@media (max-width: 768px) {
+  .view-post-page {
+    padding: 20px;
+  }
+
+  .heading {
+    font-size: 1.25rem;
+  }
+
+  .container {
+    padding: 10px;
+    margin: 40px auto;
+  }
+
+  .post {
+    padding: 10px;
+  }
+
+  .post-profile-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  .post-username {
+    font-size: 0.8rem;
+  }
+
+  .post-text {
+    font-size: 0.85rem;
+  }
+
+  .like-button {
+    font-size: 1rem;
+  }
+
+  .show-comments-btn {
+    font-size: 0.75rem;
+  }
+
+  .comments-section input[type="text"] {
+    font-size: 0.8rem;
+  }
+
+  .comments-section button {
+    font-size: 0.8rem;
+  }
+}
+
+/* للهواتف المحمولة (أقل من 480px) */
+@media (max-width: 480px) {
+  .view-post-page {
+    padding: 15px;
+  }
+
+  .heading {
+    font-size: 1.1rem;
+  }
+
+  .container {
+    padding: 8px;
+    margin: 30px auto;
+  }
+
+  .post {
+    padding: 8px;
+  }
+
+  .post-profile-image {
+    width: 25px;
+    height: 25px;
+  }
+
+  .post-username {
+    font-size: 0.75rem;
+  }
+
+  .post-text {
+    font-size: 0.8rem;
+  }
+
+  .like-button {
+    font-size: 0.9rem;
+  }
+
+  .show-comments-btn {
+    font-size: 0.7rem;
+  }
+
+  .comments-section input[type="text"] {
+    font-size: 0.75rem;
+  }
+
+  .comments-section button {
+    font-size: 0.75rem;
+  }
+}
